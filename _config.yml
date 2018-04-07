@@ -1,0 +1,43 @@
+# Site settings
+title: Czbin's Den
+description: '梦要自己扛，泪要自己尝。'
+url: 'http://www.zbin.tech/'
+baseurl: ''
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Czbin'
+  email: 317646534@qq.com
+#  twitter_username: czb1n
+#  facebook_username: czb1n
+  github_username:  czb1n
+#  linkedin_username:  czb1n
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
