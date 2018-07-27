@@ -39,5 +39,7 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
+baidu-analysis: a14b0dbc71bff63c2370f65118b12426
+
 plugins: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock']

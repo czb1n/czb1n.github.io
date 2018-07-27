@@ -78,6 +78,7 @@ $ curl -XPOST http://localhost:9200/index/fulltext/_mapping -d'
     }
 }'
 ```
+
 ### 3. 配置文件 ***elasticsearch.yml*** 部分说明。
 ``` java
 #cluster.name: elasticsearch		//配置集群的名称, 如果不指定则默认为elasticsearch
@@ -86,6 +87,7 @@ $ curl -XPOST http://localhost:9200/index/fulltext/_mapping -d'
 #node.data: true					//设置当前这个节点是否可以存储和操作数据, 默认为true
 #discovery.zen.ping.unicast.hosts: ["host1", "host2:port"]		//指定在节点运行开始时探索集群master的ip
 ```
+
 ### 4. Elasticsearch shell的一些使用方法。
 
 ``` java
@@ -140,6 +142,7 @@ $ curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty' -d '{
 	*/
 $ curl -XGET 'http://localhost:9200/twitter/_count
 ```
+
 ### 5. Spring Data - Elasticsearch。
 ``` java
 

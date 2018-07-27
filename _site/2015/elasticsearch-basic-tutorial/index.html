@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>Elasticsearch基础使用</title>
+  <meta name="description" content="1. 安装ElasticSearch。
+Elasticsearch - 下载地址
+
+">
+  <meta name="author" content="Czbin">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Elasticsearch基础使用">
+  <meta name="twitter:description" content="1. 安装ElasticSearch。
+Elasticsearch - 下载地址
+
+">
+  
+  <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Elasticsearch基础使用">
+  <meta property="og:description" content="1. 安装ElasticSearch。
+Elasticsearch - 下载地址
+
+">
+  <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/css/main.css?1532678386679063000">
+  <link rel="canonical" href="http://localhost:4000/2015/elasticsearch-basic-tutorial/">
+  <link rel="alternate" type="application/rss+xml" title="Czbin's Den" href="/feed.xml">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a14b0dbc71bff63c2370f65118b12426";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Czbin's Den">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Czbin's Den</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">梦要自己扛，泪要自己尝。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Czbin's Den blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/czb1n" title="czb1n on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:317646534@qq.com" title="Email 317646534@qq.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2015-08-17 22:17" class="post-meta__date date">17 Aug 2015</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/tags/#ElasticSearch">ElasticSearch</a> </span>
+      
+    </div>
+    <h1 class="post-title">Elasticsearch基础使用</h1>
+  </header>
+
+  <section class="post">
+    <h3 id="1-安装elasticsearch">1. 安装ElasticSearch。</h3>
+<p><a href="http://www.elastic.co/downloads/elasticsearch">Elasticsearch - 下载地址</a></p>
+
+<ul>
+  <li>windows
+控制台进入 ( <strong><em>cd</em></strong> ) ElasticSearch目录下的 <strong><em>bin</em></strong> 目录, 然后运行 <strong><em>elasticsearch.bat</em></strong></li>
+  <li>
+    <p>linux
+终端进入 ( <strong><em>cd</em></strong> ) ElasticSearch目录下的 <strong><em>bin</em></strong> 目录, 然后运行 <strong><em>./elasticsearch</em></strong></p>
+  </li>
+  <li>执行<code class="highlighter-rouge">$ curl localhost:9200</code>返回类似以下片段即代表运行成功</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
+  <span class="s">"status"</span> <span class="o">:</span> <span class="mi">200</span><span class="o">,</span>
+  <span class="s">"name"</span> <span class="o">:</span> <span class="s">"Changeling"</span><span class="o">,</span>
+  <span class="s">"cluster_name"</span> <span class="o">:</span> <span class="s">"elasticsearch"</span><span class="o">,</span>
+  <span class="s">"version"</span> <span class="o">:</span> <span class="o">{</span>
+    <span class="s">"number"</span> <span class="o">:</span> <span class="s">"1.7.1"</span><span class="o">,</span>
+    <span class="s">"build_hash"</span> <span class="o">:</span> <span class="s">"b88f43fc40b0bcd7f173a1f9ee2e97816de80b19"</span><span class="o">,</span>
+    <span class="s">"build_timestamp"</span> <span class="o">:</span> <span class="s">"2015-07-29T09:54:16Z"</span><span class="o">,</span>
+    <span class="s">"build_snapshot"</span> <span class="o">:</span> <span class="kc">false</span><span class="o">,</span>
+    <span class="s">"lucene_version"</span> <span class="o">:</span> <span class="s">"4.10.4"</span>
+  <span class="o">},</span>
+  <span class="s">"tagline"</span> <span class="o">:</span> <span class="s">"You Know, for Search"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="2-简单配置中文分词mmseg插件">2. 简单配置中文分词mmseg插件。</h3>
+<ul>
+  <li>
+    <p>下载mmseg插件的源码包 :
+<a href="https://github.com/medcl/elasticsearch-analysis-mmseg">mmseg - 插件源码</a></p>
+  </li>
+  <li>
+    <p>下载mmseg插件的jar包 :
+<a href="https://github.com/medcl/elasticsearch-rtf/tree/master/plugins/analysis-mmseg">mmseg - 插件jar包</a></p>
+  </li>
+  <li>在ElasticSearch的文件夹下的plugins文件夹中新建一个analysis-mmseg文件夹, 然后把mmseg插件的jar包放进去。</li>
+  <li>把mmseg的源码包中的config文件夹下的mmseg文件夹移动到ElasticSearch的文件夹下的config文件夹。</li>
+  <li>把以下代码追加到ElasticSearch文件夹下的config文件夹下的elasticsearch.yml中 <strong><em>(注意缩进)</em></strong>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">index:</span>
+<span class="nl">analysis:</span>
+  <span class="nl">analyzer:</span>
+    <span class="nl">mmseg:</span>
+        <span class="nl">alias:</span> <span class="o">[</span><span class="n">news_analyzer</span><span class="o">,</span> <span class="n">mmseg_analyzer</span><span class="o">]</span>
+        <span class="nl">type:</span> <span class="n">org</span><span class="o">.</span><span class="na">elasticsearch</span><span class="o">.</span><span class="na">index</span><span class="o">.</span><span class="na">analysis</span><span class="o">.</span><span class="na">MMsegAnalyzerProvider</span>
+<span class="n">index</span><span class="o">.</span><span class="na">analysis</span><span class="o">.</span><span class="na">analyzer</span><span class="o">.</span><span class="na">default</span><span class="o">.</span><span class="na">type</span> <span class="o">:</span> <span class="s">"mmseg"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>完成之后在创建mapping时就可以使用indexAnalyzer来指定索引分词器和searchAnalyzer来指定搜索分词器。
+如 :
+“indexAnalyzer”: “mmseg”,
+“searchAnalyzer”: “mmseg”,
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XPOST</span> <span class="nl">http:</span><span class="c1">//localhost:9200/index/fulltext/_mapping -d'</span>
+<span class="o">{</span>
+  <span class="s">"fulltext"</span><span class="o">:</span> <span class="o">{</span>
+           <span class="s">"_all"</span><span class="o">:</span> <span class="o">{</span>
+          <span class="s">"indexAnalyzer"</span><span class="o">:</span> <span class="s">"mmseg"</span><span class="o">,</span>
+          <span class="s">"searchAnalyzer"</span><span class="o">:</span> <span class="s">"mmseg"</span><span class="o">,</span>
+          <span class="s">"term_vector"</span><span class="o">:</span> <span class="s">"no"</span><span class="o">,</span>
+          <span class="s">"store"</span><span class="o">:</span> <span class="s">"false"</span>
+      <span class="o">},</span>
+      <span class="s">"properties"</span><span class="o">:</span> <span class="o">{</span>
+          <span class="s">"content"</span><span class="o">:</span> <span class="o">{</span>
+              <span class="s">"type"</span><span class="o">:</span> <span class="s">"string"</span><span class="o">,</span>
+              <span class="s">"store"</span><span class="o">:</span> <span class="s">"no"</span><span class="o">,</span>
+              <span class="s">"term_vector"</span><span class="o">:</span> <span class="s">"with_positions_offsets"</span><span class="o">,</span>
+              <span class="s">"indexAnalyzer"</span><span class="o">:</span> <span class="s">"mmseg"</span><span class="o">,</span>
+              <span class="s">"searchAnalyzer"</span><span class="o">:</span> <span class="s">"mmseg"</span><span class="o">,</span>
+              <span class="s">"include_in_all"</span><span class="o">:</span> <span class="s">"true"</span><span class="o">,</span>
+              <span class="s">"boost"</span><span class="o">:</span> <span class="mi">8</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span><span class="err">'</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="3-配置文件-elasticsearchyml-部分说明">3. 配置文件 <strong><em>elasticsearch.yml</em></strong> 部分说明。</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="n">cluster</span><span class="o">.</span><span class="na">name</span><span class="o">:</span> <span class="n">elasticsearch</span>		<span class="c1">//配置集群的名称, 如果不指定则默认为elasticsearch</span>
+<span class="err">#</span><span class="n">node</span><span class="o">.</span><span class="na">name</span><span class="o">:</span> <span class="s">"Franz Kafka"</span>			<span class="c1">//配置节点的名称, 如果不指定,每次运行时elasticsearch会随机指定一个名称</span>
+<span class="err">#</span><span class="n">node</span><span class="o">.</span><span class="na">master</span><span class="o">:</span> <span class="kc">true</span>					<span class="c1">//设置当前这个节点是否可以指定为集群的master, 默认为true</span>
+<span class="err">#</span><span class="n">node</span><span class="o">.</span><span class="na">data</span><span class="o">:</span> <span class="kc">true</span>					<span class="c1">//设置当前这个节点是否可以存储和操作数据, 默认为true</span>
+<span class="err">#</span><span class="n">discovery</span><span class="o">.</span><span class="na">zen</span><span class="o">.</span><span class="na">ping</span><span class="o">.</span><span class="na">unicast</span><span class="o">.</span><span class="na">hosts</span><span class="o">:</span> <span class="o">[</span><span class="s">"host1"</span><span class="o">,</span> <span class="s">"host2:port"</span><span class="o">]</span>		<span class="c1">//指定在节点运行开始时探索集群master的ip</span>
+</code></pre></div></div>
+
+<h3 id="4-elasticsearch-shell的一些使用方法">4. Elasticsearch shell的一些使用方法。</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+	创建:
+	twitter 为 index(索引名).
+	tweet 为 type(文档类型).
+	1 为 id.
+	*/</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XPUT</span> <span class="err">'</span><span class="nl">http:</span><span class="c1">//localhost:9200/twitter/tweet/1' -d '{</span>
+    <span class="s">"user"</span> <span class="o">:</span> <span class="s">"kimchy"</span><span class="o">,</span>
+    <span class="s">"post_date"</span> <span class="o">:</span> <span class="s">"2009-11-15T14:12:12"</span><span class="o">,</span>
+    <span class="s">"message"</span> <span class="o">:</span> <span class="s">"trying out Elasticsearch"</span>
+<span class="o">}</span><span class="err">'</span>
+
+<span class="cm">/**
+	获取:
+	*/</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XGET</span> <span class="err">'</span><span class="nl">http:</span><span class="c1">//localhost:9200/twitter/tweet/1'</span>
+
+<span class="cm">/**
+	删除:
+	*/</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XDELETE</span> <span class="err">'</span><span class="nl">http:</span><span class="c1">//localhost:9200/twitter/tweet/1'		//删除单条记录</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XDELETE</span> <span class="err">'</span><span class="nl">http:</span><span class="c1">//localhost:9200/twitter'		//删除整个文档</span>
+
+<span class="cm">/**
+	更新:
+	*/</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XPOST</span> <span class="err">'</span><span class="nl">localhost:</span><span class="mi">9200</span><span class="o">/</span><span class="n">twitter</span><span class="o">/</span><span class="n">tweet</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="n">_update</span><span class="err">'</span> <span class="o">-</span><span class="n">d</span> <span class="err">'</span><span class="o">{</span>
+    <span class="s">"user"</span> <span class="o">:</span> <span class="s">"Benjamin"</span><span class="o">,</span>
+    <span class="s">"post_date"</span> <span class="o">:</span> <span class="s">"2015-08-17T21:50:45"</span><span class="o">,</span>
+    <span class="s">"message"</span> <span class="o">:</span> <span class="s">"trying to update Elasticsearch"</span>
+<span class="o">}</span><span class="err">'</span>
+
+<span class="cm">/**
+	搜索:
+	*/</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XGET</span> <span class="err">'</span><span class="nl">http:</span><span class="c1">//localhost:9200/twitter/tweet/_search?q= '{</span>
+    <span class="s">"user"</span> <span class="o">:</span> <span class="s">"Benjamin"</span>
+<span class="o">}</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XGET</span> <span class="err">'</span><span class="nl">http:</span><span class="c1">//localhost:9200/twitter/tweet/_search?pretty' -d '{</span>
+	<span class="s">"query"</span><span class="o">:{</span>
+		<span class="s">"match"</span><span class="o">:{</span>
+			<span class="s">"user"</span><span class="o">:</span><span class="s">"Benjamin"</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span><span class="err">'</span>
+
+<span class="cm">/**
+	统计:
+	*/</span>
+<span class="err">$</span> <span class="n">curl</span> <span class="o">-</span><span class="n">XGET</span> <span class="err">'</span><span class="nl">http:</span><span class="c1">//localhost:9200/twitter/_count</span>
+</code></pre></div></div>
+
+<h3 id="5-spring-data---elasticsearch">5. Spring Data - Elasticsearch。</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">ElasticsearchOperations</span> <span class="n">elasticsearchOperations</span><span class="o">;</span>
+
+<span class="c1">// 创建 / 修改</span>
+<span class="n">elasticsearchOperations</span><span class="o">.</span><span class="na">index</span><span class="o">(</span><span class="k">new</span> <span class="n">IndexQuery</span><span class="o">());</span>
+
+<span class="c1">// 获取</span>
+<span class="n">elasticsearchOperations</span><span class="o">.</span><span class="na">queryForObject</span><span class="o">(</span><span class="k">new</span> <span class="n">GetQuery</span><span class="o">(),</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;);</span>
+
+<span class="c1">// 删除</span>
+<span class="n">elasticsearchOperations</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="k">new</span> <span class="n">DeleteQuery</span><span class="o">(),</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;);</span>
+
+<span class="c1">// 搜索</span>
+<span class="n">SearchQuery</span> <span class="n">searchQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NativeSearchQueryBuilder</span><span class="o">().</span>
+                <span class="n">withQuery</span><span class="o">(</span><span class="n">QueryBuilder</span><span class="o">).</span>
+                <span class="n">withFilter</span><span class="o">(</span><span class="n">FilterBuilder</span><span class="o">).</span>
+                <span class="n">withPageable</span><span class="o">(</span><span class="k">new</span> <span class="n">PageRequest</span><span class="o">(</span><span class="n">pageIndex</span><span class="o">,</span> <span class="n">pageSize</span><span class="o">)).</span>
+                <span class="n">build</span><span class="o">();</span>
+<span class="n">elasticsearchOperations</span><span class="o">.</span><span class="na">queryForList</span><span class="o">(</span><span class="n">searchQuery</span><span class="o">,</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;);</span>
+
+<span class="c1">// 显示搜索匹配分数</span>
+<span class="c1">// org.elasticsearch.client.Client client;</span>
+<span class="c1">// ElasticSearchIndex 为搜索指定的索引名</span>
+<span class="n">SearchResponse</span> <span class="n">searchResponse</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">prepareSearch</span><span class="o">(</span><span class="n">ElasticSearchIndex</span><span class="o">).</span><span class="na">setQuery</span><span class="o">(</span><span class="n">QueryBuilder</span><span class="o">).</span><span class="na">execute</span><span class="o">().</span><span class="na">actionGet</span><span class="o">();</span>
+<span class="n">SearchHits</span> <span class="n">searchHits</span> <span class="o">=</span> <span class="n">searchResponse</span><span class="o">.</span><span class="na">getHits</span><span class="o">();</span>
+<span class="k">for</span><span class="o">(</span><span class="n">SearchHit</span> <span class="n">searchHit</span> <span class="o">:</span> <span class="n">searchHits</span><span class="o">){</span>
+	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">searchHit</span><span class="o">.</span><span class="na">getScore</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Czbin. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1532678386679063000"></script>
+
+
+    </div>
+  </body>
+</html>

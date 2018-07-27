@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>iOS基于AVPlayer自定义播放器</title>
+  <meta name="description" content="简介：用AVPlayer实现一个播放器
+
+">
+  <meta name="author" content="Czbin">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iOS基于AVPlayer自定义播放器">
+  <meta name="twitter:description" content="简介：用AVPlayer实现一个播放器
+
+">
+  
+  <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iOS基于AVPlayer自定义播放器">
+  <meta property="og:description" content="简介：用AVPlayer实现一个播放器
+
+">
+  <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/css/main.css?1532678386679063000">
+  <link rel="canonical" href="http://localhost:4000/2016/ios-player-base-on-avplayer/">
+  <link rel="alternate" type="application/rss+xml" title="Czbin's Den" href="/feed.xml">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a14b0dbc71bff63c2370f65118b12426";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Czbin's Den">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Czbin's Den</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">梦要自己扛，泪要自己尝。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Czbin's Den blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/czb1n" title="czb1n on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:317646534@qq.com" title="Email 317646534@qq.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-09-13 15:52" class="post-meta__date date">13 Sep 2016</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/tags/#iOS">iOS</a> </span>
+      
+    </div>
+    <h1 class="post-title">iOS基于AVPlayer自定义播放器</h1>
+  </header>
+
+  <section class="post">
+    <p>简介：用AVPlayer实现一个播放器</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@interface</span> <span class="no">PlayerView</span> <span class="p">:</span> <span class="no">UIView</span>
+
+<span class="vi">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="no">AVPlayer</span> <span class="o">*</span><span class="n">avPlayer</span><span class="p">;</span>
+
+<span class="vi">@end</span>
+</code></pre></div></div>
+<h3 id="1-配置">1. 配置</h3>
+<p>AVPlayer本身是无法显示视频的，首先要把AVPlayer添加到AVPlayerLayer。</p>
+
+<blockquote>
+  <p>@abstract Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output</p>
+</blockquote>
+
+<p>在PlayerView中重写<code class="highlighter-rouge">+ (Class)layerClass;</code> 方法，使得PlayerView的 underlying layer 为 AVPlayerLayer：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">+</span> <span class="p">(</span><span class="no">Class</span><span class="p">)</span><span class="n">layerClass</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="no">AVPlayerLayer</span> <span class="k">class</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>然后初始化AVPlayer：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="n">playerWithPlayerItem</span><span class="p">:(</span><span class="no">AVPlayerItem</span> <span class="o">*</span><span class="p">)</span><span class="n">item</span><span class="p">;</span>
+ <span class="o">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="n">initWithPlayerItem</span><span class="p">:(</span><span class="no">AVPlayerItem</span> <span class="o">*</span><span class="p">)</span><span class="n">item</span><span class="p">;</span>
+</code></pre></div></div>
+<p>AVPlayerItem可以根据AVAsset创建，可以创建在线资源item，也可以是本地资源item。
+创建AVPlayer之后就添加到AVPlayerLayer。</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[(</span><span class="no">AVPlayerLayer</span> <span class="o">*</span><span class="p">)</span><span class="nb">self</span><span class="p">.</span><span class="nf">layer</span> <span class="n">setPlayer</span><span class="ss">:self</span><span class="p">.</span><span class="nf">avPlayer</span><span class="p">];</span>
+</code></pre></div></div>
+<h3 id="2-使用">2. 使用</h3>
+<p>播放和暂停。</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">+</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">play</span><span class="p">;</span>
+ <span class="o">+</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">pause</span><span class="p">;</span>
+</code></pre></div></div>
+<p>音量控制。</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="n">float</span> <span class="n">volume</span><span class="p">;</span>
+<span class="vi">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">getter</span><span class="o">=</span><span class="n">isMuted</span><span class="p">)</span> <span class="no">BOOL</span> <span class="n">muted</span><span class="p">;</span>
+</code></pre></div></div>
+<p>切换播放Item。</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">replaceCurrentItemWithPlayerItem</span><span class="p">:(</span><span class="n">nullable</span> <span class="no">AVPlayerItem</span> <span class="o">*</span><span class="p">)</span><span class="n">item</span><span class="p">;</span>
+</code></pre></div></div>
+<p>获取播放状态和缓存进度，这需要监听AVPlayer中当前播放的item中的属性变化。</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="nf">avPlayer</span><span class="p">.</span><span class="nf">currentItem</span> <span class="n">addObserver</span><span class="ss">:self</span>
+                            <span class="n">forKeyPath</span><span class="p">:</span><span class="err">@</span><span class="s2">"status"</span>
+                               <span class="n">options</span><span class="ss">:NSKeyValueObservingOptionNew</span>
+                               <span class="n">context</span><span class="ss">:nil</span><span class="p">];</span>
+    
+<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="nf">avPlayer</span><span class="p">.</span><span class="nf">currentItem</span> <span class="n">addObserver</span><span class="ss">:self</span>
+                            <span class="n">forKeyPath</span><span class="p">:</span><span class="err">@</span><span class="s2">"loadedTimeRanges"</span>
+                               <span class="n">options</span><span class="ss">:NSKeyValueObservingOptionNew</span>
+                               <span class="n">context</span><span class="ss">:nil</span><span class="p">];</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">observeValueForKeyPath</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">keyPath</span> <span class="n">ofObject</span><span class="p">:(</span><span class="nb">id</span><span class="p">)</span><span class="n">object</span> <span class="n">change</span><span class="p">:(</span><span class="no">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">change</span> <span class="n">context</span><span class="p">:(</span><span class="n">void</span> <span class="o">*</span><span class="p">)</span><span class="n">context</span>
+<span class="p">{</span>
+    <span class="no">AVPlayerItem</span> <span class="o">*</span><span class="n">playerItem</span> <span class="o">=</span> <span class="p">(</span><span class="no">AVPlayerItem</span> <span class="o">*</span><span class="p">)</span><span class="n">object</span><span class="p">;</span>
+    
+    <span class="k">if</span> <span class="p">([</span><span class="n">keyPath</span> <span class="n">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s2">"status"</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">([</span><span class="n">playerItem</span> <span class="n">status</span><span class="p">]</span> <span class="o">==</span> <span class="no">AVPlayerStatusReadyToPlay</span><span class="p">)</span> <span class="p">{</span>
+            <span class="sr">//</span> <span class="err">正常播放</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">playerItem</span> <span class="n">status</span><span class="p">]</span> <span class="o">==</span> <span class="no">AVPlayerStatusFailed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="sr">//</span> <span class="err">播放失败</span>
+            <span class="sr">//</span> <span class="n">show</span> <span class="k">retry</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="sr">//</span> <span class="err">未知错误</span>
+            <span class="sr">//</span> <span class="n">show</span> <span class="k">retry</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">keyPath</span> <span class="n">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s2">"loadedTimeRanges"</span><span class="p">])</span> <span class="p">{</span>
+        <span class="no">NSArray</span> <span class="o">*</span><span class="n">loadedTimeRanges</span> <span class="o">=</span> <span class="p">[</span><span class="n">playerItem</span> <span class="n">loadedTimeRanges</span><span class="p">];</span>
+        <span class="no">CMTimeRange</span> <span class="n">timeRange</span> <span class="o">=</span> <span class="p">[</span><span class="n">loadedTimeRanges</span><span class="p">.</span><span class="nf">firstObject</span> <span class="no">CMTimeRangeValue</span><span class="p">];</span>    <span class="sr">//</span> <span class="err">获取缓冲区域</span>
+        <span class="n">float</span> <span class="n">startSeconds</span> <span class="o">=</span> <span class="no">CMTimeGetSeconds</span><span class="p">(</span><span class="n">timeRange</span><span class="p">.</span><span class="nf">start</span><span class="p">);</span>
+        <span class="n">float</span> <span class="n">durationSeconds</span> <span class="o">=</span> <span class="no">CMTimeGetSeconds</span><span class="p">(</span><span class="n">timeRange</span><span class="p">.</span><span class="nf">duration</span><span class="p">);</span>
+        <span class="no">NSTimeInterval</span> <span class="n">result</span> <span class="o">=</span> <span class="n">startSeconds</span> <span class="o">+</span> <span class="n">durationSeconds</span><span class="p">;</span>                     <span class="sr">//</span> <span class="err">计算缓冲总进度</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Czbin. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1532678386679063000"></script>
+
+
+    </div>
+  </body>
+</html>
