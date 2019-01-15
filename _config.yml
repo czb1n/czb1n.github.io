@@ -1,5 +1,5 @@
 # Site settings
-title: Czbin's Den
+title: czb1n's Den
 description: '梦要自己扛，泪要自己尝。'
 url: 'http://www.zbin.tech/'
 baseurl: ''
@@ -7,7 +7,7 @@ baseurl: ''
 # disqus_shortname: 'your-disqus-name'
 
 author:
-  name: 'Czbin'
+  name: 'czb1n'
   email: 317646534@qq.com
 #  twitter_username: czb1n
 #  facebook_username: czb1n
