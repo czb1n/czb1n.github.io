@@ -10,6 +10,7 @@
   <meta name="description" content="简介：用AVPlayer实现一个播放器
 
 ">
+  <meta name="keyword" content="Server iOS Java Kotlin Swift Objective-C 技术 程序员">
   <meta name="author" content="czb1n">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -52,7 +53,7 @@
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1552630659562053000">
+  <link rel="stylesheet" href="/css/main.css?1552638982613227000">
   <link rel="canonical" href="http://localhost:4000/2016/ios-player-base-on-avplayer/">
   <link rel="alternate" type="application/rss+xml" title="czb1n's Den" href="/feed.xml">
   <script>
@@ -231,10 +232,12 @@ var _hmt = _hmt || [];
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">keyPath</span> <span class="n">isEqualToString</span><span class="p">:</span><span class="err">@</span><span class="s2">"loadedTimeRanges"</span><span class="p">])</span> <span class="p">{</span>
         <span class="no">NSArray</span> <span class="o">*</span><span class="n">loadedTimeRanges</span> <span class="o">=</span> <span class="p">[</span><span class="n">playerItem</span> <span class="n">loadedTimeRanges</span><span class="p">];</span>
-        <span class="no">CMTimeRange</span> <span class="n">timeRange</span> <span class="o">=</span> <span class="p">[</span><span class="n">loadedTimeRanges</span><span class="p">.</span><span class="nf">firstObject</span> <span class="no">CMTimeRangeValue</span><span class="p">];</span>    <span class="sr">//</span> <span class="err">获取缓冲区域</span>
+        <span class="sr">//</span> <span class="err">获取缓冲区域</span>
+        <span class="no">CMTimeRange</span> <span class="n">timeRange</span> <span class="o">=</span> <span class="p">[</span><span class="n">loadedTimeRanges</span><span class="p">.</span><span class="nf">firstObject</span> <span class="no">CMTimeRangeValue</span><span class="p">];</span>
         <span class="n">float</span> <span class="n">startSeconds</span> <span class="o">=</span> <span class="no">CMTimeGetSeconds</span><span class="p">(</span><span class="n">timeRange</span><span class="p">.</span><span class="nf">start</span><span class="p">);</span>
         <span class="n">float</span> <span class="n">durationSeconds</span> <span class="o">=</span> <span class="no">CMTimeGetSeconds</span><span class="p">(</span><span class="n">timeRange</span><span class="p">.</span><span class="nf">duration</span><span class="p">);</span>
-        <span class="no">NSTimeInterval</span> <span class="n">result</span> <span class="o">=</span> <span class="n">startSeconds</span> <span class="o">+</span> <span class="n">durationSeconds</span><span class="p">;</span>                     <span class="sr">//</span> <span class="err">计算缓冲总进度</span>
+        <span class="sr">//</span> <span class="err">计算缓冲总进度</span>
+        <span class="no">NSTimeInterval</span> <span class="n">result</span> <span class="o">=</span> <span class="n">startSeconds</span> <span class="o">+</span> <span class="n">durationSeconds</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -267,7 +270,7 @@ var _hmt = _hmt || [];
 </footer>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1552630659562053000"></script>
+<script type="text/javascript" src="/js/main.js?1552638982613227000"></script>
 
 
     </div>

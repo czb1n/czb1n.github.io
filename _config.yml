@@ -1,18 +1,15 @@
 # Site settings
 title: czb1n's Den
 description: '梦要自己扛，泪要自己尝。'
+keyword: 'Server iOS Java Kotlin Swift Objective-C 技术 程序员'
 url: 'http://www.zbin.tech/'
 baseurl: ''
-# google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
 
 author:
   name: 'czb1n'
   email: 317646534@qq.com
-#  twitter_username: czb1n
 #  facebook_username: czb1n
   github_username:  czb1n
-#  linkedin_username:  czb1n
 
 defaults:
   -
