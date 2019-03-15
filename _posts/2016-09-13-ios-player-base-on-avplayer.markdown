@@ -2,7 +2,7 @@
 title:  "iOS基于AVPlayer自定义播放器"
 date:   2016-09-13 15:52:49
 categories: [iOS]
-tags: [iOS]
+tags: [iOS, Player]
 ---
 简介：用AVPlayer实现一个播放器
 

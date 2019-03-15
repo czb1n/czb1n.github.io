@@ -2,7 +2,7 @@
 title:  "iOS加载本地HTML"
 date:   2017-04-17 15:43:05
 categories: [iOS]
-tags: [iOS]
+tags: [iOS, WebView]
 ---
 简介：读取本地的HTML文件来展示H5页面。
 
