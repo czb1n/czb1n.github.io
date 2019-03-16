@@ -1,42 +1,78 @@
-# Site settings
-title: czb1n's Den
-description: '梦要自己扛，泪要自己尝。'
-keyword: 'Server iOS Java Kotlin Swift Objective-C 技术 程序员'
-url: 'http://www.zbin.tech/'
+# Site settings 配置站点
+title: "czb1n's Den"
+description: '属于 czb1n 的小地方。'
+keyword: 'czb1n czb server ios java kotlin swift objective-c 技术 程序员 博客'
+url: 'http://www.zbin.tech/' # your host
+
+# if you don't need baseurl, you should leave this value blank.
 baseurl: ''
 
-author:
-  name: 'czb1n'
-  email: 317646534@qq.com
-#  facebook_username: czb1n
-  github_username:  czb1n
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
 
-defaults:
-  -
-    scope:
-      path: ''
-      type: 'posts'
-    values:
-        layout: 'post'
+# Footer
+footer:
+  since: 2018
+
+# Author 配置博主信息
+author: 'czb1n'
+nickname: 'czb1n'
+bio: '一个普通的服务端及iOS开发者。'
+avatar: '/assets/img/profile.jpg'
+
+# Search
+search: true
+
+# Night mode
+nightMode: true
+
+# Comments 评论功能
+comments:
+  disqus: true
+  disqus_url: 'https://czb1n.disqus.com/embed.js'
+
+# MathJax 公式支持 by Ray-Eldath
+mathjax: true
+
+# Share
+social-share: true
+social-share-items: ['wechat', 'weibo', 'twitter']
+
+# theme color 主题皮肤
+theme-color: 'default'  # pink or default
+
+# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
+postPatterns: 'circuitBoard'
+
+# SNS settings 配置社交网站
+# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
+sns:
+  weibo: '//weibo.com/caozbin'
+  github: '//github.com/czb1n'
+
+# Tags 设置标签
+recommend-tags: true # whether or not display recommend-tags on the sidebar
+recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
 
 # Build settings
-destination: _site
-paginate: 10
-permalink: /:year/:title/
+paginate: 6
+paginate_path: 'page:num'
+exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
+
+# Markdown
 markdown: kramdown
 highlighter: rouge
-
-sass:
-    sass_dir: _sass
-    style: compressed
-
 kramdown:
-  # use Github Flavored Markdown
   input: GFM
-  # do not replace newlines by <br>s
-  hard_wrap: false
 
-baidu-analysis: a14b0dbc71bff63c2370f65118b12426
+# RSS
+RSS: false
 
-plugins: ['jekyll-paginate']
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
+# Permalink
+# See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
+permalink: /:year/:month/:day/:title.html
+
+# Plugins
+plugins: [jekyll-paginate]
