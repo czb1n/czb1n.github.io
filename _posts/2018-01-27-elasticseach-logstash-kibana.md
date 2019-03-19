@@ -7,7 +7,7 @@ categories: [Server]
 tags: [Server, ElasticSearch, Monitor]
 ---
 
-## ELK简介
+## 简介
 
 > Elasticsearch
 
