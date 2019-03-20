@@ -1,5 +1,5 @@
 # Site settings 配置站点
-title: "czb1n's Den"
+title: "czb1n's den"
 description: '属于 czb1n 的小地方。'
 keyword: 'czb1n czb server ios java kotlin swift objective-c 技术 程序员 博客'
 url: 'http://www.zbin.tech/' # your host
@@ -77,6 +77,11 @@ permalink: /:year/:month/:day/:title.html
 nightMode: false
 
 baidu-analysis: a14b0dbc71bff63c2370f65118b12426
+
+friends:
+  -
+    name: 'BytePoem'
+    link: 'https://www.bytepoem.com'
 
 # Plugins
 plugins: [jekyll-paginate]

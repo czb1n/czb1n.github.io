@@ -98,6 +98,15 @@ description:
         </div>
         {% endif %}
 
+        <div class="friends-card">
+            <p>友情链接</p>
+            <section class="tags-card">
+                {% for friend in site.friends %}
+                <a href="{{ friend.link }}" class="tag">{{ friend.name }}</a>
+                {% endfor %}
+            </section>
+        </div>
+
     </aside>
 
 </main>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Jekyll Theme Style
  * - author: liaokeyu (liaokeyu.com)
@@ -364,6 +365,30 @@ a {
     .g-sidebar section .tag {
       margin-bottom: 8px; }
 
+.friends-card {
+  position: relative;
+  margin-top: 16px;
+  padding: 0;
+  background-color: #fff; }
+
+.friends-card {
+  padding: 30px 20px;
+  background-color: #fff;
+  border: 1px solid #E7EAF1;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 37, 55, 0.06); }
+  .friends-card section {
+    padding: 10px 0;
+    border-bottom: 1px solid #E7EAF1; }
+    .friends-card section:first-child {
+      padding-top: 0; }
+    .friends-card section:last-child {
+      border-bottom: none;
+      padding-bottom: 0; }
+    .friends-card section .tag {
+      margin-bottom: 8px; }
+
 .search-card {
   position: relative;
   margin-top: 16px;
@@ -626,7 +651,7 @@ a {
   padding: 0 0 32px; }
   .markdown-body .highlight {
     margin: 0 0 16px;
-    overflow: scroll; }
+    /** overflow: scroll;  修复代码高亮 显示两个 scroll的问题 **/ }
   .markdown-body img {
     transition: .3s; }
   .markdown-body ul li p, .markdown-body ol li p {
@@ -876,6 +901,8 @@ a {
     float: none;
     margin: 0 auto; }
   .g-sidebar, .search-card {
+    display: none; }
+  .g-sidebar, .friends-card {
     display: none; }
   .pagination .page-num {
     display: none; }
