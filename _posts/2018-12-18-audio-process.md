@@ -8,7 +8,6 @@ tags: [Server, Audio, FFmpeg]
 ---
 
 ## 一、基础概念
-
 - 采样频率（Sampling Rate），单位时间内采集的样本数，是采样周期的倒数，指两个采样之间的时间间隔。
 > 采样频率必须至少是信号中最大频率分量频率的两倍，否则就不能从信号采样中恢复原始信号，这其实就是著名的香农采样定理。  
 > CD音质(一般的音频)采样率为 44.1 kHz，人耳只能听到20Hz到20khz范围的声音。
@@ -34,7 +33,6 @@ tags: [Server, Audio, FFmpeg]
 > http://blog.jianchihu.net/pcm-volume-control.html
 
 ## 二、FFmpeg
-
 - 参考
 > https://trac.ffmpeg.org/wiki/Concatenate  
 > https://blog.csdn.net/leixiaohua1020/article/details/15811977
@@ -133,7 +131,6 @@ ffmpeg -i {输入文件0} ... -i {输入文件n} -filter_complex "[{输入文件
 ```
 
 ## 三、pydub
-
 ### 3.1、安装
 
 > https://github.com/jiaaro/pydub  

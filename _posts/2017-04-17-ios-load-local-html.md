@@ -7,17 +7,18 @@ categories: [iOS]
 tags: [iOS, WebView]
 ---
 
-简介：读取本地的HTML文件来展示H5页面。
+## 简介
+- 读取本地的HTML文件来展示H5页面。
 
- - HTML文件会需要根据URL中不同的`Hash Tag`来显示不同的页面。例如`#!/register`显示注册页，`#!/login`显示登录页等等。
- - HTML文件还需要根据URL传入的参数请求数据。
+> HTML文件会需要根据URL中不同的`Hash Tag`来显示不同的页面。例如`#!/register`显示注册页，`#!/login`显示登录页等等。  
+> HTML文件还需要根据URL传入的参数请求数据。
 
 iOS8以后，苹果推出了新框架`WebKit`。所以分别用`UIWebView`和`WKWebView`来实现看看。
 以下仅当HTML文件的文件名为`index.html`。
 
 WebView调试方法是在模拟器显示WebView之后，打开Safari的`"开发"`Tab的Simulator。
 
-# UIWebView
+### UIWebView
 
 ``` Swift
 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
@@ -96,7 +97,7 @@ NSURL *url = [[NSURL alloc] initWithString:urlString];
 }
 ```
 
-# WKWebView
+### WKWebView
 
 `WKWebView`速度更快，内存占用少。使用的方法和`UIWebView`的方法差不多。
 

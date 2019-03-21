@@ -7,7 +7,8 @@ categories: [iOS]
 tags: [iOS, AVPlayer]
 ---
 
-简介：用AVPlayer实现一个播放器
+## 简介
+- 用AVPlayer实现一个播放器
 
 ``` Swift
 @interface PlayerView : UIView
@@ -17,7 +18,7 @@ tags: [iOS, AVPlayer]
 @end
 ```
 
-### 1. 配置
+## 配置
 
 AVPlayer本身是无法显示视频的，首先要把AVPlayer添加到AVPlayerLayer。
 
@@ -45,7 +46,7 @@ AVPlayerItem可以根据AVAsset创建，可以创建在线资源item，也可以
 ``` Swift
 [(AVPlayerLayer *)self.layer setPlayer:self.avPlayer];
 ```
-### 2. 使用
+## 使用
 播放和暂停。
 
 ``` Swift

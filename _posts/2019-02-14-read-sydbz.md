@@ -4,7 +4,7 @@ author: czb1n
 title:  "读《任正非：商业的本质》"
 date:   2019-02-14 09:30:00
 categories: [Reading]
-tags: [Reading, Book]
+tags: [Reading]
 ---
 
 ## 简介

@@ -8,30 +8,25 @@ tags: [Server, ElasticSearch, Monitor]
 ---
 
 ## 简介
-
 > Elasticsearch
-
 Elasticsearch 是基于 JSON 的分布式搜索和分析引擎，专为实现水平扩展、高可用和管理便捷性而设计。
 ```
 https://www.elastic.co/cn/downloads/elasticsearch
 ```
 
 > Logstash
-
 Logstash 是动态数据收集管道，拥有可扩展的插件生态系统，能够与 Elasticsearch 产生强大的协同作用。
 ```
 https://www.elastic.co/cn/downloads/logstash
 ```
 
 > Kibana
-
 Kibana 能够以图表的形式呈现数据，并且具有可扩展的用户界面，供您全方位配置和管理 Elastic Stack。
 ```
 https://www.elastic.co/cn/downloads/kibana
 ```
 
 ## 实现配置
-
 ### Logstash配置
 Logstash的配置分为3个部分。
 - 输入(Input)
@@ -90,7 +85,6 @@ fitler {
 ```
 
 ### Kibana配置
-
 Kibana的配置很简单，只要配置Elasticsearch相关的信息就可以了。
 
 这里主要介绍一下Kibana相关的一些插件。
@@ -129,6 +123,5 @@ sentinl的配置主要分为查询条件(Input)、判断条件(Condition)、告�
 4. console
 
 ### 其他可以加入的优化项
-
 - Kafka
 - Beats

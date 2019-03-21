@@ -3,8 +3,8 @@ layout: post
 author: czb1n
 title:  "Elasticsearch基础使用"
 date:   2015-08-17 22:17:59
-categories: [Databases]
-tags: [ElasticSearch]
+categories: [Database]
+tags: [Database, Server, ElasticSearch]
 ---
 
 ### 1. 安装ElasticSearch。
