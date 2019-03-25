@@ -816,7 +816,7 @@ a {
     color: #C8CDD3; }
   .night-mode .post-header .filter {
     opacity: .6; }
-  .night-mode .article-item, .night-mode .g-sidebar, .night-mode .page-links, .night-mode .search-card input, .night-mode .search_result,
+  .night-mode .article-item, .night-mode .g-sidebar, .night-mode .page-links, .night-mode .friends-card, .night-mode .search-card input, .night-mode .search_result,
   .night-mode .search_item, .night-mode .article-item .post-tag, .night-mode .tags-card .tag, .night-mode .tags-list li,
   .night-mode .tags-list .tag {
     color: #868A94;

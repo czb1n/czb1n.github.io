@@ -51,6 +51,8 @@ postPatterns: 'circuitBoard'
 sns:
   weibo: '//weibo.com/caozbin'
   github: '//github.com/czb1n'
+  email: 'mailto:czb1n@live.com'
+  menu: '/rss.xml'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
