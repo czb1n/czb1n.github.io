@@ -88,6 +88,7 @@ application.yml
     @Configuration
     class RestTemplateConfiguration {
 
+        // 使用**@LoadBalance**开启负载均衡。
         @Bean
         @LoadBalanced
         fun restTemplate(): RestTemplate {
@@ -105,7 +106,7 @@ application.yml
         lateinit var restTemplate: RestTemplate
 
         @RequestMapping("/hello")
-        fun hello(name: String): String? {
+        fun hello(@RequestParam("name") name: String): String? {
             // 其中 EUREKA-CLIENT 为application.yml中的应用名的大写形式，也是注册中心中显示的名字。
             // hello 则为服务提供的接口名。
             return restTemplate.getForObject("http://EUREKA-CLIENT/hello?name=$name", String::class.java)
@@ -114,7 +115,7 @@ application.yml
     }
 ```
 
-多次访问 http://localhost:6605/hello?name=czb1n，会轮流显示：``` response from 6603: hello czb. ``` 和 ``` response from 6604: hello czb. ```
+多次访问 http://localhost:6605/hello?name=czb1n，会轮流显示：``` response from 6603: hello czb1n. ``` 和 ``` response from 6604: hello czb1n. ```
 
 ## 其他
 
