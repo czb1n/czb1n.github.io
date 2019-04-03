@@ -2,7 +2,7 @@
 layout: post
 author: czb1n
 title:  "学习SpringCloud之服务网关Gateway"
-date:   2019-04-02 16:32:00
+date:   2019-04-03 16:32:00
 categories: [Server]
 tags: [SpringCloud, Server, Kotlin]
 ---
