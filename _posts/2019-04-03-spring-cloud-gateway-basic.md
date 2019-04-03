@@ -2,7 +2,7 @@
 layout: post
 author: czb1n
 title:  "学习SpringCloud之服务网关Gateway"
-date:   2019-04-03 16:32:00
+date:   2019-04-02 16:32:00
 categories: [Server]
 tags: [SpringCloud, Server, Kotlin]
 ---
@@ -49,7 +49,7 @@ tags: [SpringCloud, Server, Kotlin]
     </dependencies>
 ```
 
-- 这里有一点要说明一下，因为父模块中有``` spring-boot-starter-web ```的依赖，而**SpringCloudGateway**还不支持``` spring-boot-starter-web ```，所以需要先把依赖排除。  
+这里有一点要说明一下，因为父模块中有``` spring-boot-starter-web ```的依赖，而**SpringCloudGateway**还不支持``` spring-boot-starter-web ```，所以需要先把依赖排除。  
 否则启动会出现以下错误：
 
 ``` Java
