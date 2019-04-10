@@ -2,19 +2,26 @@
 layout: post
 author: czb1n
 title:  "分布式流处理 Kafka 基础"
-date:   2019-04-10 18:02:00
+date:   2019-04-09 18:02:00
 categories: [Server]
 tags: [Server, Kafka]
 ---
-## 基础介绍
-- [Apache Kafka®](http://kafka.apache.org/) 是一个**分布式流处理平台**。
+## 简介
+- [Apache Kafka®](http://kafka.apache.org/) 是一个**分布式流处理平台**，是一种消息中间件。
+> 中间件是一种独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术之间共享资源。
 
 - 核心概念:
   - Kafka作为一个集群，运行在一台或者多台服务器上。
   - Kafka通过**topic**对存储的流数据进行分类。
   - Kafka中每条记录中都包含**Key**、**Value**和**Timestamp**。
 
-- 核心API：
+- 核心名词:
+  - **Producer**：消息生产者。
+  - **Consumer**：消息消费者。
+  - **Topic**：消息所属主题，用于区分消息。
+  - **Broker**：缓存代理，一个Kafka集群中的服务器称为Broker。
+
+- 核心API:
   - **The Producer API** 允许应用发布流数据到一个或者多个topic。
   - **The Consumer API** 允许应用订阅一个或多个topic，并且对发布给他们的流数据进行处理。
   - **The Streams API** 允许应用作为一个流处理器，消费一个或者多个topic产生的输入流，然后生产一个输出流到一个或多个topic中去，在输入输出流中进行有效的转换。
@@ -28,7 +35,7 @@ tags: [Server, Kafka]
   - 偏移量由消费者所控制。
   ![image](http://kafka.apachecn.org/10/images/log_consumer.png)
 
-- Kafka的流行用例：http://kafka.apachecn.org/uses.html
+- Kafka的流行用例: http://kafka.apachecn.org/uses.html
 
 > 注：以上资料包括图片均来自参考[Kafka中文文档](http://kafka.apachecn.org/)。
 
